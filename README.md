@@ -1,2 +1,2 @@
-# niki-automation
-Niki Automation framework
+# niki-API-automation
+Niki API Automation framework
