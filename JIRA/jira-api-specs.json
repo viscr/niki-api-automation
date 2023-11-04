@@ -1,6 +1,6 @@
 {
-  "name": "Your App Name",
-  "desc": "Your App Description",
+  "name": "Jira",
+  "desc": "Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.",
   "services": [
     {
       "name": "Announcement banner",
