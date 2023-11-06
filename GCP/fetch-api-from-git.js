@@ -5,6 +5,7 @@ const path = require('path');
 
 const execPromise = promisify(exec);
 const errorLogFilePath = 'error_occurred.txt';
+const localOutputDirectory = 'json-files-git';
 
 async function cloneRepoAndFetchLastJsonFiles(repoUrl, targetDirectory) {
   const tempDir = path.join(__dirname, 'temp-repo');
@@ -48,7 +49,9 @@ async function processGoogleCloudDirectory(directory) {
     );
 
     if (lastJsonFile) {
-      console.log(`Last JSON file in ${directory}: ${lastJsonFile}`);
+      const outputDirectory = path.join(localOutputDirectory, path.basename(directory));
+      await saveLastJsonFile(lastJsonFile, outputDirectory);
+    //   console.log(`Last JSON file in ${directory} saved to ${outputDirectory}`);
       // Implement your logic to process the last JSON file here
     }
   } catch (error) {
@@ -84,6 +87,16 @@ async function findLastJsonFileInDeepestDirectory(directory) {
   } catch (error) {
     logError(`Error finding JSON file: ${error}`);
     return null;
+  }
+}
+
+async function saveLastJsonFile(lastJsonFile, outputDirectory) {
+  try {
+    await fs.mkdir(outputDirectory, { recursive: true });
+    const destinationPath = path.join(outputDirectory, path.basename(lastJsonFile.filePath));
+    await fs.copyFile(lastJsonFile.filePath, destinationPath);
+  } catch (error) {
+    logError(`Error saving JSON file: ${error}`);
   }
 }
 
