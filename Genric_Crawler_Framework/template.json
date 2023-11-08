@@ -1,0 +1,73 @@
+{
+    "name": "<app_name>",
+    "desc": "<app_desc>",
+    "services": [
+        {
+            "name": "<service_name>",
+            "desc": "<service_desc>",
+            "query": [
+                {
+                    "name": "<api_name>",
+                    "desc": "<api_desc>",
+                    "input":[
+                        {
+                            "name": "<parameter_name>",
+                            "desc": "<parameter_desc>",
+                            "type": "<parameter_type>(required|optional)",
+                            "data_type": "<parameter_data_type>"
+                        }
+                    ],
+                    "output":[
+                        {
+                            "name": "<parameter_name>",
+                            "desc": "<parameter_desc>",
+                            "data_type": "<parameter_data_type>"
+                        }
+                    ]
+                }
+            ],
+            "action": [
+                {
+                    "name": "<api_name>",
+                    "desc": "<api_desc>",
+                    "input":[
+                        {
+                            "name": "<parameter_name>",
+                            "desc": "<parameter_desc>",
+                            "type": "<parameter_type>(required|optional)",
+                            "data_type": "<parameter_data_type>"
+                        }
+                    ],
+                    "output":[
+                        {
+                            "name": "<parameter_name>",
+                            "desc": "<parameter_desc>",
+                            "data_type": "<parameter_data_type>"
+                        }
+                    ]
+                }
+            ],
+            "monitor": [
+                {
+                    "name": "<api_name>",
+                    "desc": "<api_desc>",
+                    "input":[
+                        {
+                            "name": "<parameter_name>",
+                            "desc": "<parameter_desc>",
+                            "type": "<parameter_type>(required|optional)",
+                            "data_type": "<parameter_data_type>"
+                        }
+                    ],
+                    "output":[
+                        {
+                            "name": "<parameter_name>",
+                            "desc": "<parameter_desc>",
+                            "data_type": "<parameter_data_type>"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
